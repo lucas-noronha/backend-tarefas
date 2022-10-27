@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "r/VzYueckiAKTyXNGeLyonioEXyRauwTgTqky5Ij0Y9TiGf5gi+ymNBO6aKqa6q0jXdowFVwpHCqvPgEVtFXMw==",
+  "dgSpecHash": "6K921OZNHeh+qtLc+tuk6IbZps9LgaRJGP0DJKT4xU8CxqjFIKAItnEhl+iBW7AR1ao8fYqj25s2+Hvn35xzdg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\lucas\\Desktop\\project\\Tarefas.Api\\Tarefas.Api.csproj",
+  "projectFilePath": "C:\\Users\\lucas\\Repositories\\backend-tarefas\\Tarefas.Api\\Tarefas.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\lucas\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
     "C:\\Users\\lucas\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",

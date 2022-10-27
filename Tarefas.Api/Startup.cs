@@ -41,9 +41,7 @@ namespace Tarefas.Api
             {
                 options.SwaggerEndpoint("/swagger/v1/swagger.json", "v1");
             });
-                     
-
-
+            
             app.UseStaticFiles();
             app.UseRouting();
             app.UseAuthorization();
