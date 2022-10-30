@@ -20,9 +20,9 @@ namespace Tarefas.Domain.Entities
             DataPrevista = dataPrevista;
             TipoChamado = tipoChamado;
 
-            CriadorId = criador.BuscarId();
+            CriadorId = criador.ObterId();
             Criador = criador;
-            ClienteId = cliente.BuscarId();
+            ClienteId = cliente.ObterId();
             Cliente = cliente;
 
             TempoGasto = new List<TempoGasto>();
@@ -108,7 +108,7 @@ namespace Tarefas.Domain.Entities
         }
         internal void AtribuirResponsavel(Usuario responsavel)
         {
-            ResponsavelId = responsavel.BuscarId();
+            ResponsavelId = responsavel.ObterId();
             Responsavel = responsavel;
         }
 
@@ -118,7 +118,7 @@ namespace Tarefas.Domain.Entities
         }
         internal void AtribuirCliente(Cliente cliente)
         {
-            ClienteId = cliente.BuscarId();
+            ClienteId = cliente.ObterId();
             Cliente = cliente;
         }
         #endregion

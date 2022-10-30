@@ -14,7 +14,7 @@ namespace Tarefas.Domain.Entities
         protected DateTime DataCriacao { get; set; }
 
         #region Acessadores
-        internal Guid BuscarId()
+        internal Guid ObterId()
         {
             return Id;
         }

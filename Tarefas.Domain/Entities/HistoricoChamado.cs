@@ -15,7 +15,7 @@ namespace Tarefas.Domain.Entities
             Anotacao = anotacao;
             DataAnotacao = dataAnotacao;
 
-            UsuarioId = usuario.BuscarId();
+            UsuarioId = usuario.ObterId();
             Usuario = usuario;
         }
         public Guid Id { get; set; }
