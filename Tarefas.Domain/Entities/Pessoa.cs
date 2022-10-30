@@ -7,18 +7,18 @@ using System.Threading.Tasks;
 
 namespace Tarefas.Domain.Entities
 {
-    internal class Pessoa
+    public abstract class Pessoa
     {
-        protected Guid Id { get; set; }
-        protected string Nome { get; set; }
-        protected DateTime DataCriacao { get; set; }
+        public Guid Id { get; set; }
+        public string Nome { get; set; }
+        public DateTime DataCriacao { get; set; }
 
         #region Acessadores
         internal Guid ObterId()
         {
             return Id;
         }
-        internal string BuscarNome()
+        internal string ObterNome()
         {
             return Nome;
         }
@@ -27,7 +27,7 @@ namespace Tarefas.Domain.Entities
         {
             Nome = nome;
         }
-        internal DateTime BuscarDataCriacao()
+        internal DateTime ObterDataCriacao()
         {
             return DataCriacao;
         }

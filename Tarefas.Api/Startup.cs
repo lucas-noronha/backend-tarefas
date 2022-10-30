@@ -1,5 +1,7 @@
-﻿using Microsoft.OpenApi.Models;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.OpenApi.Models;
 using System.Runtime;
+using Tarefas.Data;
 
 namespace Tarefas.Api
 {
@@ -16,6 +18,15 @@ namespace Tarefas.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
+
+            var conStr = configRoot.GetConnectionString("Tarefas");
+            services.AddDbContext<TarefasDb>(options =>
+            {
+                var builder = options.UseNpgsql(conStr);
+            });
+
+
 
             services.AddSwaggerGen(c =>
             {

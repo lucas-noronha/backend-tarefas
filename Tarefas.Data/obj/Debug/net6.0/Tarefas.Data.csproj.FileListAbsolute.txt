@@ -1,0 +1,17 @@
+C:\Users\lucas\Repositories\backend-tarefas\Tarefas.Data\bin\Debug\net6.0\Tarefas.Data.deps.json
+C:\Users\lucas\Repositories\backend-tarefas\Tarefas.Data\bin\Debug\net6.0\Tarefas.Data.runtimeconfig.json
+C:\Users\lucas\Repositories\backend-tarefas\Tarefas.Data\bin\Debug\net6.0\Tarefas.Data.dll
+C:\Users\lucas\Repositories\backend-tarefas\Tarefas.Data\bin\Debug\net6.0\Tarefas.Data.pdb
+C:\Users\lucas\Repositories\backend-tarefas\Tarefas.Data\bin\Debug\net6.0\Tarefas.Domain.dll
+C:\Users\lucas\Repositories\backend-tarefas\Tarefas.Data\bin\Debug\net6.0\Tarefas.Domain.pdb
+C:\Users\lucas\Repositories\backend-tarefas\Tarefas.Data\obj\Debug\net6.0\Tarefas.Data.csproj.AssemblyReference.cache
+C:\Users\lucas\Repositories\backend-tarefas\Tarefas.Data\obj\Debug\net6.0\Tarefas.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\lucas\Repositories\backend-tarefas\Tarefas.Data\obj\Debug\net6.0\Tarefas.Data.AssemblyInfoInputs.cache
+C:\Users\lucas\Repositories\backend-tarefas\Tarefas.Data\obj\Debug\net6.0\Tarefas.Data.AssemblyInfo.cs
+C:\Users\lucas\Repositories\backend-tarefas\Tarefas.Data\obj\Debug\net6.0\Tarefas.Data.csproj.CoreCompileInputs.cache
+C:\Users\lucas\Repositories\backend-tarefas\Tarefas.Data\obj\Debug\net6.0\Tarefas.Data.csproj.CopyComplete
+C:\Users\lucas\Repositories\backend-tarefas\Tarefas.Data\obj\Debug\net6.0\Tarefas.Data.dll
+C:\Users\lucas\Repositories\backend-tarefas\Tarefas.Data\obj\Debug\net6.0\refint\Tarefas.Data.dll
+C:\Users\lucas\Repositories\backend-tarefas\Tarefas.Data\obj\Debug\net6.0\Tarefas.Data.pdb
+C:\Users\lucas\Repositories\backend-tarefas\Tarefas.Data\obj\Debug\net6.0\Tarefas.Data.genruntimeconfig.cache
+C:\Users\lucas\Repositories\backend-tarefas\Tarefas.Data\obj\Debug\net6.0\ref\Tarefas.Data.dll

@@ -8,22 +8,32 @@ using Tarefas.Domain.Interfaces;
 
 namespace Tarefas.Domain.Entities
 {
-    internal class Cliente : Pessoa, IEndereco
+    public class Cliente : Pessoa, IEndereco
     {
-        internal Cliente(string nome)
+        public Cliente()
+        {
+
+        }
+        public Cliente(string nome, string bairro, string cidade, string uf, string logradouro, string numero, string cep)
         {
             Id = Guid.NewGuid();
             DataCriacao = DateTime.Now;
 
             Nome = nome;
+            Bairro = bairro;
+            Cidade = cidade;
+            UF = uf;
+            Logradouro = logradouro;
+            Numero = numero;
+            Cep = cep;
         }
 
-        public string Bairro { get => ObterBairro(); set => AtribuirBairro(value); }
-        public string Cidade { get => ObterCidade(); set => AtribuirCidade(value); }
-        public string UF { get => ObterUF(); set => AtribuirUF(value); }
-        public string Logradouro { get => ObterLogradouro(); set => AtribuirLogradouro(value); }
-        public string Numero { get => ObterNumero(); set => AtribuirNumero(value); }
-        public string Cep { get => ObterCep(); set => AtribuirCep(value); }
+        public string Bairro { get; set; }
+        public string Cidade { get; set; }
+        public string UF { get; set; }
+        public string Logradouro { get; set; }
+        public string Numero { get; set; }
+        public string Cep { get; set; }
 
         #region AcessadoresEndereco
         internal string ObterBairro()
@@ -48,6 +58,10 @@ namespace Tarefas.Domain.Entities
         }
         internal void AtribuirUF(string uf)
         {
+            if (uf.Length != 2)
+            {
+                throw new Exception("UF precisa conter 2 caracteres!");
+            }
             UF = uf;
         }
         internal string ObterLogradouro()
@@ -76,6 +90,7 @@ namespace Tarefas.Domain.Entities
         }
 
         #endregion
+
 
     }
 }

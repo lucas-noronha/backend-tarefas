@@ -359,6 +359,16 @@
         "build": {
           "buildTransitive/netcoreapp3.1/_._": {}
         }
+      },
+      "Tarefas.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/Tarefas.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Tarefas.Domain.dll": {}
+        }
       }
     }
   },
@@ -812,6 +822,11 @@
         "system.runtime.compilerservices.unsafe.nuspec",
         "useSharedDesignerContext.txt"
       ]
+    },
+    "Tarefas.Domain/1.0.0": {
+      "type": "project",
+      "path": "../Tarefas.Domain/Tarefas.Domain.csproj",
+      "msbuildProject": "../Tarefas.Domain/Tarefas.Domain.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -819,7 +834,8 @@
       "Microsoft.EntityFrameworkCore >= 6.0.10",
       "Microsoft.EntityFrameworkCore.Relational >= 6.0.10",
       "Microsoft.EntityFrameworkCore.Tools >= 6.0.10",
-      "Npgsql.EntityFrameworkCore.PostgreSQL >= 6.0.7"
+      "Npgsql.EntityFrameworkCore.PostgreSQL >= 6.0.7",
+      "Tarefas.Domain >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -856,7 +872,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\lucas\\Repositories\\backend-tarefas\\Tarefas.Domain\\Tarefas.Domain.csproj": {
+              "projectPath": "C:\\Users\\lucas\\Repositories\\backend-tarefas\\Tarefas.Domain\\Tarefas.Domain.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

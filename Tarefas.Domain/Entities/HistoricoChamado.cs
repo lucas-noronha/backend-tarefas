@@ -6,14 +6,18 @@ using System.Threading.Tasks;
 
 namespace Tarefas.Domain.Entities
 {
-    internal class HistoricoChamado
+    public class HistoricoChamado
     {
-        internal HistoricoChamado(string anotacao, DateTime dataAnotacao, Usuario usuario)
+        public HistoricoChamado()
+        {
+
+        }
+        public HistoricoChamado(string anotacao, DateTime dataOcorrencia, Usuario usuario)
         {
             Id = Guid.NewGuid();
 
             Anotacao = anotacao;
-            DataAnotacao = dataAnotacao;
+            DataOcorrencia = dataOcorrencia;
 
             UsuarioId = usuario.ObterId();
             Usuario = usuario;
@@ -26,6 +30,11 @@ namespace Tarefas.Domain.Entities
 
         public Usuario Usuario { get; set; }
 
-        public DateTime DataAnotacao { get; set; }
+        public DateTime DataOcorrencia { get; set; }
+
+        public Guid ChamadoId { get; set; }
+        public Chamado Chamado { get; set; }
+
+
     }
 }

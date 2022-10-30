@@ -52,3 +52,16 @@ C:\Users\lucas\Repositories\backend-tarefas\Tarefas.Api\obj\Debug\net6.0\refint\
 C:\Users\lucas\Repositories\backend-tarefas\Tarefas.Api\obj\Debug\net6.0\Tarefas.Api.pdb
 C:\Users\lucas\Repositories\backend-tarefas\Tarefas.Api\obj\Debug\net6.0\Tarefas.Api.genruntimeconfig.cache
 C:\Users\lucas\Repositories\backend-tarefas\Tarefas.Api\obj\Debug\net6.0\ref\Tarefas.Api.dll
+C:\Users\lucas\Repositories\backend-tarefas\Tarefas.Api\bin\Debug\net6.0\Humanizer.dll
+C:\Users\lucas\Repositories\backend-tarefas\Tarefas.Api\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\lucas\Repositories\backend-tarefas\Tarefas.Api\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\lucas\Repositories\backend-tarefas\Tarefas.Api\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\lucas\Repositories\backend-tarefas\Tarefas.Api\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\lucas\Repositories\backend-tarefas\Tarefas.Api\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\lucas\Repositories\backend-tarefas\Tarefas.Api\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\lucas\Repositories\backend-tarefas\Tarefas.Api\bin\Debug\net6.0\Npgsql.dll
+C:\Users\lucas\Repositories\backend-tarefas\Tarefas.Api\bin\Debug\net6.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
+C:\Users\lucas\Repositories\backend-tarefas\Tarefas.Api\bin\Debug\net6.0\Tarefas.Data.dll
+C:\Users\lucas\Repositories\backend-tarefas\Tarefas.Api\bin\Debug\net6.0\Tarefas.Domain.dll
+C:\Users\lucas\Repositories\backend-tarefas\Tarefas.Api\bin\Debug\net6.0\Tarefas.Data.pdb
+C:\Users\lucas\Repositories\backend-tarefas\Tarefas.Api\bin\Debug\net6.0\Tarefas.Domain.pdb

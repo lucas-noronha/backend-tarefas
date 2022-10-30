@@ -6,9 +6,13 @@ using System.Threading.Tasks;
 
 namespace Tarefas.Domain.Entities
 {
-    internal class TempoGasto
+    public class TempoGasto
     {
-        internal TempoGasto(TimeSpan tempo, string atividade, DateTime dataAtividade)
+        public TempoGasto()
+        {
+
+        }
+        public TempoGasto(TimeSpan tempo, string atividade, DateTime dataAtividade)
         {
             Id = Guid.NewGuid();
 
@@ -16,12 +20,14 @@ namespace Tarefas.Domain.Entities
             Atividade = atividade;
             DataAtividade = dataAtividade;
         }
-        protected Guid Id { get; set; }
+        public Guid Id { get; set; }
+        public TimeSpan Tempo { get; set; }
+        public string Atividade { get; set; }
+        public DateTime DataAtividade { get; set; }
+        public Guid ChamadoId { get; set; }
 
-        protected TimeSpan Tempo { get; set; }
+        public Chamado Chamado { get; set; }
 
-        protected string Atividade { get; set; }
 
-        protected DateTime DataAtividade { get; set; }
     }
 }

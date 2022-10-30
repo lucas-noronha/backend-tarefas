@@ -8,9 +8,13 @@ using Tarefas.Domain.Enums;
 
 namespace Tarefas.Domain.Entities
 {
-    internal class Usuario : Pessoa
+    public class Usuario : Pessoa
     {
-        internal Usuario(string nome, string login, string senhaCriptograda, ETipoUsuario tipoUsuario)
+        public Usuario()
+        {
+
+        }
+        public Usuario(string nome, string login, string senhaCriptograda, ETipoUsuario tipoUsuario)
         {
             Id = Guid.NewGuid();
             DataCriacao = DateTime.Now;
@@ -21,14 +25,9 @@ namespace Tarefas.Domain.Entities
             TipoUsuario = tipoUsuario;
         }
 
-
-        
-
-        protected string Login { get; set; }
-
-        protected string Senha { get; set; }
-
-        protected ETipoUsuario TipoUsuario { get; set; }
+        public string Login { get; set; }
+        public string Senha { get; set; }
+        public ETipoUsuario TipoUsuario { get; set; }
 
         #region Acessadores
         internal string ObterLogin()

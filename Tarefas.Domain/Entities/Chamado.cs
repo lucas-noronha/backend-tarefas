@@ -8,8 +8,12 @@ using Tarefas.Domain.Enums;
 
 namespace Tarefas.Domain.Entities
 {
-    internal class Chamado
+    public class Chamado
     {
+        public Chamado()
+        {
+
+        }
         public Chamado(string titulo, string descricao, DateTime dataPrevista, ETipoChamado tipoChamado, Usuario criador, Cliente cliente)
         {
             Id = Guid.NewGuid();
@@ -29,29 +33,21 @@ namespace Tarefas.Domain.Entities
             Historico = new List<HistoricoChamado>();
         }
 
-        protected Guid Id { get; set; }
-
-        protected string Titulo { get; set; }
-
-        protected string Descricao { get; set; }
-
-        protected DateTime DataPrevista { get; set; }
-
-        protected DateTime DataCriacao { get; set; }
-
-        protected ETipoChamado TipoChamado { get; set; }
-
-        protected Guid CriadorId { get; set; }
-        protected Usuario Criador { get; set; }
-
-        protected Guid ResponsavelId { get; set; }
-        protected Usuario Responsavel { get; set; }
-
-        protected Guid ClienteId { get; set; }
-        protected Cliente Cliente { get; set; }
-
-        protected virtual ICollection<TempoGasto> TempoGasto { get; set; }
-        protected virtual ICollection<HistoricoChamado> Historico { get; set; }
+        public Guid Id { get; set; }
+        public string Titulo { get; set; }
+        public string Descricao { get; set; }
+        public DateTime DataPrevista { get; set; }
+        public DateTime DataCriacao { get; set; }
+        public ETipoChamado TipoChamado { get; set; }
+        public Guid CriadorId { get; set; }
+        public Usuario Criador { get; set; }
+        public Guid ResponsavelId { get; set; }
+        public Usuario Responsavel { get; set; }
+        public Guid ClienteId { get; set; }
+        public Cliente Cliente { get; set; }
+        public EStatusChamado Status { get; set; }
+        public virtual ICollection<TempoGasto> TempoGasto { get; set; }
+        public virtual ICollection<HistoricoChamado> Historico { get; set; }
 
         #region Acessadores
 

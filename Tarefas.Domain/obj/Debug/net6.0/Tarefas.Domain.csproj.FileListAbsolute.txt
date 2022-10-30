@@ -1,0 +1,12 @@
+C:\Users\lucas\Repositories\backend-tarefas\Tarefas.Domain\obj\Debug\net6.0\Tarefas.Domain.csproj.AssemblyReference.cache
+C:\Users\lucas\Repositories\backend-tarefas\Tarefas.Domain\obj\Debug\net6.0\Tarefas.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\lucas\Repositories\backend-tarefas\Tarefas.Domain\obj\Debug\net6.0\Tarefas.Domain.AssemblyInfoInputs.cache
+C:\Users\lucas\Repositories\backend-tarefas\Tarefas.Domain\obj\Debug\net6.0\Tarefas.Domain.AssemblyInfo.cs
+C:\Users\lucas\Repositories\backend-tarefas\Tarefas.Domain\obj\Debug\net6.0\Tarefas.Domain.csproj.CoreCompileInputs.cache
+C:\Users\lucas\Repositories\backend-tarefas\Tarefas.Domain\bin\Debug\net6.0\Tarefas.Domain.deps.json
+C:\Users\lucas\Repositories\backend-tarefas\Tarefas.Domain\bin\Debug\net6.0\Tarefas.Domain.dll
+C:\Users\lucas\Repositories\backend-tarefas\Tarefas.Domain\bin\Debug\net6.0\Tarefas.Domain.pdb
+C:\Users\lucas\Repositories\backend-tarefas\Tarefas.Domain\obj\Debug\net6.0\Tarefas.Domain.dll
+C:\Users\lucas\Repositories\backend-tarefas\Tarefas.Domain\obj\Debug\net6.0\refint\Tarefas.Domain.dll
+C:\Users\lucas\Repositories\backend-tarefas\Tarefas.Domain\obj\Debug\net6.0\Tarefas.Domain.pdb
+C:\Users\lucas\Repositories\backend-tarefas\Tarefas.Domain\obj\Debug\net6.0\ref\Tarefas.Domain.dll
