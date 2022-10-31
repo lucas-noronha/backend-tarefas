@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Tarefas.Domain.Entities;
 using Tarefas.Domain.Interfaces.Repositorios;
 
-namespace Tarefas.Dominio.Interfaces.Repositorios
+namespace Tarefas.Domain.Interfaces.Repositorios
 {
     public interface IClienteRepositorio : IRepositorioPadrao<Cliente>
     {

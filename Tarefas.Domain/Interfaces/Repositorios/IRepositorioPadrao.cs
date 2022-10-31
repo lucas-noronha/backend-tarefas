@@ -7,11 +7,11 @@ using Tarefas.Domain.Entities;
 
 namespace Tarefas.Domain.Interfaces.Repositorios
 {
-    public interface IRepositorioPadrao<T>
+    public interface IRepositorioPadrao<T> where T : class
     {
         T ObterPorId(Guid id);
-        IQueryable<Chamado> ObterPorDataCriacao(DateTime date);
-        IQueryable<T> Lista();
+        IQueryable<T> ObterPorDataCriacao(DateTime date);
+        IQueryable<T> ObterLista();
         IQueryable<T> ListaComVinculos();
         bool Adicionar(T entidade);
         void Alterar(T entidade);
