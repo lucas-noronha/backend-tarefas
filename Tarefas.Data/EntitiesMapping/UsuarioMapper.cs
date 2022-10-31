@@ -41,6 +41,10 @@ namespace Tarefas.Data.EntitiesMapping
             builder
                 .Property(x => x.DataCriacao)
                 .HasColumnName("data_criacao");
+
+            builder
+                .HasMany(x => x.Tarefas)
+                .WithOne(x => x.Responsavel);
         }
     }
 }

@@ -28,6 +28,7 @@ namespace Tarefas.Domain.Entities
         public string Login { get; set; }
         public string Senha { get; set; }
         public ETipoUsuario TipoUsuario { get; set; }
+        public List<Chamado> Tarefas { get; set; }
 
         #region Acessadores
         internal string ObterLogin()
