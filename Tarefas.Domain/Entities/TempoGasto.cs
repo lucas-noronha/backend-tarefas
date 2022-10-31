@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Tarefas.Domain.Dtos;
 
 namespace Tarefas.Domain.Entities
 {
@@ -12,6 +13,17 @@ namespace Tarefas.Domain.Entities
         {
 
         }
+
+        public TempoGasto(TempoGastoDto dto)
+        {
+            Id = dto.Id;
+            Tempo = dto.Tempo;
+            Atividade = dto.Atividade;
+            DataAtividade = dto.DataAtividade;
+            ChamadoId = dto.ChamadoId;
+            Chamado = new Chamado(dto.Chamado);
+        }
+
         public TempoGasto(TimeSpan tempo, string atividade, DateTime dataAtividade, Chamado chamado)
         {
             Id = Guid.NewGuid();

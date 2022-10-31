@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Tarefas.Domain.Dtos;
 using Tarefas.Domain.Enums;
 
 namespace Tarefas.Domain.Entities
@@ -14,6 +15,19 @@ namespace Tarefas.Domain.Entities
         {
 
         }
+
+        public Usuario(UsuarioDto dto)
+        {
+            Id = dto.Id;
+            DataCriacao = dto.DataCriacao;
+
+            Nome = dto.Nome;
+            Senha = dto.Senha;
+            TipoUsuario = dto.TipoUsuario;
+
+            Tarefas = dto.Tarefas.Select(x => new Chamado(x)).ToList();
+        }
+
         public Usuario(string nome, string login, string senhaCriptograda, ETipoUsuario tipoUsuario)
         {
             Id = Guid.NewGuid();
@@ -28,7 +42,7 @@ namespace Tarefas.Domain.Entities
         public string Login { get; set; }
         public string Senha { get; set; }
         public ETipoUsuario TipoUsuario { get; set; }
-        public virtual List<Chamado> Tarefas { get; set; }
+        public virtual ICollection<Chamado> Tarefas { get; set; }
 
         #region Acessadores
         internal string ObterLogin()

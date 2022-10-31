@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
+using Tarefas.Domain.Dtos;
 using Tarefas.Domain.Enums;
 
 namespace Tarefas.Domain.Entities
@@ -14,6 +15,30 @@ namespace Tarefas.Domain.Entities
         {
 
         }
+
+        internal Chamado(ChamadoDto dto)
+        {
+            Id = Guid.NewGuid();
+            DataCriacao = DateTime.Now;
+
+            Titulo = dto.Titulo;
+            Descricao = dto.Descricao;
+            DataPrevista = dto.DataPrevista;
+            TipoChamado = dto.TipoChamado;
+
+            CriadorId = dto.CriadorId;
+            Criador = new Usuario(dto.Criador);
+            
+            ResponsavelId = dto.ResponsavelId;
+            Responsavel = new Usuario(dto.Responsavel);
+
+            ClienteId = dto.ClienteId;
+            Cliente = new Cliente(dto.Cliente);
+            
+            TempoGasto = dto.TempoGasto.Select(x => new TempoGasto(x)).ToList();
+            Historico = dto.Historico.Select(x => new HistoricoChamado(x)).ToList();
+        }
+
         public Chamado(string titulo, string descricao, DateTime dataPrevista, ETipoChamado tipoChamado, Usuario criador, Cliente cliente)
         {
             Id = Guid.NewGuid();
@@ -26,6 +51,9 @@ namespace Tarefas.Domain.Entities
 
             CriadorId = criador.ObterId();
             Criador = criador;
+            ResponsavelId = criador.ObterId();
+            Responsavel = criador;
+
             ClienteId = cliente.ObterId();
             Cliente = cliente;
 

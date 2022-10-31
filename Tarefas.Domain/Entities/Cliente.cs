@@ -4,6 +4,7 @@ using System.Linq;
 using System.Runtime.ConstrainedExecution;
 using System.Text;
 using System.Threading.Tasks;
+using Tarefas.Domain.Dtos;
 using Tarefas.Domain.Interfaces;
 
 namespace Tarefas.Domain.Entities
@@ -14,6 +15,20 @@ namespace Tarefas.Domain.Entities
         {
 
         }
+        internal Cliente(ClienteDto dto)
+        {
+            Id = dto.Id;
+            DataCriacao = dto.DataCriacao;
+
+            Nome = dto.Nome;
+            Bairro = dto.Bairro;
+            Cidade = dto.Cidade;
+            UF = dto.UF;
+            Logradouro = dto.Logradouro;
+            Numero = dto.Numero;
+            Cep = dto.Cep;
+        }
+
         public Cliente(string nome, string bairro, string cidade, string uf, string logradouro, string numero, string cep)
         {
             Id = Guid.NewGuid();

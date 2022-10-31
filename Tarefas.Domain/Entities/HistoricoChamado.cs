@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Tarefas.Domain.Dtos;
 
 namespace Tarefas.Domain.Entities
 {
@@ -12,7 +13,20 @@ namespace Tarefas.Domain.Entities
         {
 
         }
-        public HistoricoChamado(string anotacao, DateTime dataOcorrencia, Usuario usuario)
+
+        public HistoricoChamado(HistoricoChamadoDto dto)
+        {
+            Id = dto.Id;
+            Anotacao = dto.Anotacao;
+            DataOcorrencia = dto.DataOcorrencia;
+
+            UsuarioId = dto.UsuarioId;
+            Usuario = new Usuario(dto.Usuario);
+            ChamadoId = dto.ChamadoId;
+            Chamado = new Chamado(dto.Chamado);
+        }
+
+        public HistoricoChamado(string anotacao, DateTime dataOcorrencia, Usuario usuario, Chamado chamado)
         {
             Id = Guid.NewGuid();
 
@@ -21,6 +35,9 @@ namespace Tarefas.Domain.Entities
 
             UsuarioId = usuario.ObterId();
             Usuario = usuario;
+
+            ChamadoId = chamado.Id;
+            Chamado = chamado;
         }
         public Guid Id { get; set; }
 
