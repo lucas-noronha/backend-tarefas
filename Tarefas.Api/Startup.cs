@@ -4,6 +4,7 @@ using System.Runtime;
 using Tarefas.Data;
 using Tarefas.Data.Repositorios;
 using Tarefas.Domain.Interfaces.Repositorios;
+using Tarefas.Domain.Servicos;
 
 namespace Tarefas.Api
 {
@@ -46,10 +47,12 @@ namespace Tarefas.Api
                 });
             });
 
-
             services.AddTransient<IChamadoRepositorio, ChamadoRepositorio>();
             services.AddTransient<IClienteRepositorio, ClienteRepositorio>();
             services.AddTransient<IUsuarioRepositorio, UsuarioRepositorio>();
+            services.AddTransient<ChamadoServico>();
+            services.AddTransient<ClienteServico>();
+            services.AddTransient<UsuarioServico>();
         }
         public void Configure(WebApplication app, IWebHostEnvironment env)
         {
