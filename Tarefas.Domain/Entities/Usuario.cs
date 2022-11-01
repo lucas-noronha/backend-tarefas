@@ -16,18 +16,6 @@ namespace Tarefas.Domain.Entities
 
         }
 
-        public Usuario(UsuarioDto dto)
-        {
-            Id = dto.Id;
-            DataCriacao = dto.DataCriacao;
-
-            Nome = dto.Nome;
-            Senha = dto.Senha;
-            TipoUsuario = dto.TipoUsuario;
-
-            Tarefas = dto.Tarefas.Select(x => new Chamado(x)).ToList();
-        }
-
         public Usuario(string nome, string login, string senhaCriptograda, ETipoUsuario tipoUsuario)
         {
             Id = Guid.NewGuid();

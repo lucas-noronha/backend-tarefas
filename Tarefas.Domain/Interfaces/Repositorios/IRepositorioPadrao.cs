@@ -14,6 +14,9 @@ namespace Tarefas.Domain.Interfaces.Repositorios
         IQueryable<T> ObterLista();
         IQueryable<T> ListaComVinculos();
         bool Adicionar(T entidade);
+
+        bool AdicionarLista(ICollection<T> entidades);
+
         void Alterar(T entidade);
         void Deletar(T entidade);
     }

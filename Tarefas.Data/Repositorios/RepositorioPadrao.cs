@@ -34,6 +34,14 @@ namespace Tarefas.Data.Repositorios
             return true;
         }
 
+        public bool AdicionarLista(ICollection<T> entidades)
+        {
+            DataContext.Set<T>().AddRange(entidades);
+            DataContext.SaveChanges();
+
+            return true;
+        }
+
         public void Alterar(T entidade)
         {
             DataContext.Entry(entidade).State = Microsoft.EntityFrameworkCore.EntityState.Modified;

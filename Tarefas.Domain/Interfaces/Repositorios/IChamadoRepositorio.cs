@@ -12,5 +12,13 @@ namespace Tarefas.Domain.Interfaces.Repositorios
         IQueryable<Chamado> ObterPorCliente(Guid clienteId);
 
         IQueryable<Chamado> ObterPorResponsavel(Guid responsavelId);
+
+        void AdicionarHistorico(HistoricoChamado historicoChamado);
+
+        void AdicionarTempoGasto(TempoGasto tempoGasto);
+
+        void RemoverHistorico(Guid historicoId);
+
+        void RemoverTempoGasto(Guid tempoId);
     }
 }

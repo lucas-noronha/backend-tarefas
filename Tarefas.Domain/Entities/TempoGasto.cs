@@ -14,16 +14,6 @@ namespace Tarefas.Domain.Entities
 
         }
 
-        public TempoGasto(TempoGastoDto dto)
-        {
-            Id = dto.Id;
-            Tempo = dto.Tempo;
-            Atividade = dto.Atividade;
-            DataAtividade = dto.DataAtividade;
-            ChamadoId = dto.ChamadoId;
-            Chamado = new Chamado(dto.Chamado);
-        }
-
         public TempoGasto(TimeSpan tempo, string atividade, DateTime dataAtividade, Chamado chamado)
         {
             Id = Guid.NewGuid();
@@ -41,7 +31,6 @@ namespace Tarefas.Domain.Entities
         public DateTime DataAtividade { get; set; }
         public Guid ChamadoId { get; set; }
         public Chamado Chamado { get; set; }
-
 
     }
 }

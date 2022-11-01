@@ -31,9 +31,21 @@ namespace Tarefas.Domain.Dtos
         public Guid ChamadoId { get; set; }
         public ChamadoDto Chamado { get; set; }
 
-        internal HistoricoChamado CriarEntidade()
+        internal HistoricoChamado CriarOuAlterarEntidade(HistoricoChamado? historico = null)
         {
-            return new HistoricoChamado(this);
+            var referencia = historico;
+            if (referencia == null)
+            {
+                referencia = new HistoricoChamado();
+                referencia.Id = Guid.NewGuid();
+                referencia.DataOcorrencia = DateTime.Now;
+            }
+
+            referencia.Anotacao = Anotacao;
+            referencia.UsuarioId = UsuarioId;
+            referencia.ChamadoId = ChamadoId;
+            
+            return referencia;
         }
     }
 }

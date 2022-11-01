@@ -14,18 +14,6 @@ namespace Tarefas.Domain.Entities
 
         }
 
-        public HistoricoChamado(HistoricoChamadoDto dto)
-        {
-            Id = dto.Id;
-            Anotacao = dto.Anotacao;
-            DataOcorrencia = dto.DataOcorrencia;
-
-            UsuarioId = dto.UsuarioId;
-            Usuario = new Usuario(dto.Usuario);
-            ChamadoId = dto.ChamadoId;
-            Chamado = new Chamado(dto.Chamado);
-        }
-
         public HistoricoChamado(string anotacao, DateTime dataOcorrencia, Usuario usuario, Chamado chamado)
         {
             Id = Guid.NewGuid();
@@ -51,7 +39,6 @@ namespace Tarefas.Domain.Entities
 
         public Guid ChamadoId { get; set; }
         public Chamado Chamado { get; set; }
-
 
     }
 }

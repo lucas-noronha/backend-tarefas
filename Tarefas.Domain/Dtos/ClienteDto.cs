@@ -30,9 +30,27 @@ namespace Tarefas.Domain.Dtos
         public string Numero { get; set; }
         public string Cep { get; set; }
 
-        internal Cliente CriarEntidade()
+        internal Cliente CriarOuAlterarEntidade(Cliente? cliente = null)
         {
-            return new Cliente(this);
+            var referencia = cliente;
+
+            if (referencia == null)
+            {
+                referencia = new Cliente();
+                referencia.Id = Guid.NewGuid();
+                referencia.DataCriacao = DateTime.Now;
+            }
+
+            referencia.Nome = Nome;
+            referencia.Bairro = Bairro;
+            referencia.Cidade = Cidade;
+            referencia.UF = UF;
+            referencia.Logradouro = Logradouro;
+            referencia.Numero = Numero;
+            referencia.Cep = Cep;
+
+            return referencia;
         }
+
     }
 }

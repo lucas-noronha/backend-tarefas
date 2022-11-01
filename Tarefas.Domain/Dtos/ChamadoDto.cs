@@ -57,9 +57,28 @@ namespace Tarefas.Domain.Dtos
         public List<TempoGastoDto> TempoGasto { get; set; }
         public List<HistoricoChamadoDto> Historico { get; set; }
 
-        internal Chamado CriarEntidade()
+        internal Chamado CriarOuAlterarEntidade(Chamado? chamado = null)
         {
-            return new Chamado(this);
+            var referencia = chamado;
+            if (referencia == null)
+            {
+                referencia = new Chamado();
+                referencia.Id = Guid.NewGuid();
+                referencia.DataCriacao = DateTime.Now;
+            }
+            
+
+            referencia.Titulo = Titulo;
+            referencia.Descricao = Descricao;
+            referencia.DataPrevista = DataPrevista;
+            referencia.TipoChamado = TipoChamado;
+
+
+            referencia.CriadorId = CriadorId;
+            referencia.ResponsavelId = ResponsavelId;
+            referencia.ClienteId = ClienteId;
+            
+            return referencia;
         }
     }
 }

@@ -26,9 +26,24 @@ namespace Tarefas.Domain.Dtos
         public ETipoUsuario TipoUsuario { get; set; }
         public virtual List<ChamadoDto> Tarefas { get; set; }
 
-        internal Usuario CriarEntidade()
+        internal Usuario CriarOuAlterarEntidade(Usuario? usuario = null)
         {
-            return new Usuario(this);
+            var referencia = usuario;
+            if (referencia == null)
+            {
+                referencia = new Usuario();
+                referencia.Id = Guid.NewGuid();
+                referencia.DataCriacao = DateTime.Now;
+
+            }
+
+            referencia.Nome = Nome;
+            referencia.Login = Login;
+            referencia.Senha = Senha;
+            referencia.TipoUsuario = TipoUsuario;
+
+            return referencia;
+
         }
     }
 }

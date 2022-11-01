@@ -93,6 +93,14 @@ namespace Tarefas.Data.Repositorios
             return true;
         }
 
+        public bool AdicionarLista(ICollection<Chamado> chamados)
+        {
+            DataContext.AddRange(chamados);
+            DataContext.SaveChanges();
+
+            return true;
+        }
+
         public void Alterar(Chamado entidade)
         {
             DataContext.Entry(entidade).State = EntityState.Modified;
@@ -102,6 +110,33 @@ namespace Tarefas.Data.Repositorios
         public void Deletar(Chamado entidade)
         {
             DataContext.Remove(entidade);
+        }
+
+        
+        public void AdicionarHistorico(HistoricoChamado historicoChamado)
+        {
+            DataContext.HistoricosChamados.Add(historicoChamado);
+            DataContext.SaveChanges();
+        }
+
+        public void AdicionarTempoGasto(TempoGasto tempoGasto)
+        {
+            DataContext.TemposGastos.Add(tempoGasto);
+            DataContext.SaveChanges();
+        }
+
+        public void RemoverHistorico(Guid historicoId)
+        {
+            var entidade = DataContext.HistoricosChamados.First(x => x.Id == historicoId);
+            DataContext.HistoricosChamados.Remove(entidade);
+            DataContext.SaveChanges();
+        }
+
+        public void RemoverTempoGasto(Guid tempoId)
+        {
+            var entidade = DataContext.TemposGastos.First(x => x.Id == tempoId);
+            DataContext.TemposGastos.Remove(entidade);
+            DataContext.SaveChanges();
         }
     }
 }

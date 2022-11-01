@@ -23,9 +23,21 @@ namespace Tarefas.Domain.Dtos
         public Guid ChamadoId { get; set; }
         public ChamadoDto Chamado { get; set; }
 
-        internal TempoGasto CriarEntidade()
+        internal TempoGasto CriarOuAlterarEntidade(TempoGasto? tempoGasto = null)
         {
-            return new TempoGasto(this);
+            var referencia = tempoGasto;
+            if (referencia == null)
+            {
+                referencia = new TempoGasto();
+                referencia.Id = Guid.NewGuid();
+            }
+
+            referencia.Tempo = Tempo;
+            referencia.Atividade = Atividade;
+            referencia.DataAtividade = DataAtividade;
+            referencia.ChamadoId = ChamadoId;
+
+            return referencia;
         }
 
     }

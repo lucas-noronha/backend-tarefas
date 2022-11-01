@@ -12,22 +12,7 @@ namespace Tarefas.Domain.Entities
     public class Cliente : Pessoa, IEndereco
     {
         public Cliente()
-        {
-
-        }
-        internal Cliente(ClienteDto dto)
-        {
-            Id = dto.Id;
-            DataCriacao = dto.DataCriacao;
-
-            Nome = dto.Nome;
-            Bairro = dto.Bairro;
-            Cidade = dto.Cidade;
-            UF = dto.UF;
-            Logradouro = dto.Logradouro;
-            Numero = dto.Numero;
-            Cep = dto.Cep;
-        }
+        { }
 
         public Cliente(string nome, string bairro, string cidade, string uf, string logradouro, string numero, string cep)
         {
