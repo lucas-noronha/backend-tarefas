@@ -33,11 +33,13 @@ namespace Tarefas.Domain.Servicos
             return dtos;
         }
 
-        public void Cadastrar(ClienteDto dto)
+        public Guid Cadastrar(ClienteDto dto)
         {
             var entidade = dto.CriarOuAlterarEntidade();
             
             repositorio.Adicionar(entidade);
+
+            return entidade.Id;
         }
 
         public void CadastrarLista(ICollection<ClienteDto> dtos)
@@ -54,9 +56,9 @@ namespace Tarefas.Domain.Servicos
             repositorio.Alterar(cliente);    
         }
 
-        public void Inativar(ClienteDto dto)
+        public void Inativar(Guid id)
         {
-            var cliente = repositorio.ObterPorId(dto.Id);
+            var cliente = repositorio.ObterPorId(id);
             cliente.Inativo = true;
 
             repositorio.Alterar(cliente);

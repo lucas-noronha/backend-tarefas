@@ -33,14 +33,18 @@ namespace Tarefas.Data.EntitiesMapping
             builder
                 .Property(x => x.Login)
                 .HasColumnName("login");
-            
+
             builder
                 .Property(x => x.Senha)
                 .HasColumnName("senha");
-            
+
             builder
                 .Property(x => x.DataCriacao)
                 .HasColumnName("data_criacao");
+
+            builder
+                .Property(x => x.Inativo)
+                .HasColumnName("inativo");
 
             builder
                 .HasMany(x => x.Tarefas)
