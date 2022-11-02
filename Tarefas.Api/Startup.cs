@@ -33,7 +33,7 @@ namespace Tarefas.Api
 
             services.AddSwaggerGen(c =>
             {
-                
+                c.EnableAnnotations();
                 c.SwaggerDoc("v1", new OpenApiInfo { 
                     Title = "Tarefas", Version = "v1", 
                     Description = "API para controlar fluxo de tarefas de uma pequena equipe.",
