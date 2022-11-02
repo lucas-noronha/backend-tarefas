@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Tarefas.Domain.Dtos;
+using Tarefas.Domain.Handlers;
 using Tarefas.Domain.Interfaces.Repositorios;
 
 namespace Tarefas.Domain.Servicos
@@ -48,7 +49,7 @@ namespace Tarefas.Domain.Servicos
 
         public void Alterar(UsuarioDto dto)
         {
-            var entidade = repositorio.ObterPorId(dto.Id);
+            var entidade = repositorio.ObterPorId(dto.Id.GetValueOrDefault());
             dto.CriarOuAlterarEntidade(entidade);
             repositorio.Alterar(entidade);
         }
@@ -60,5 +61,41 @@ namespace Tarefas.Domain.Servicos
 
             repositorio.Alterar(entidade);
         }
+
+        public UsuarioDto Login(string login, string senha)
+        {
+            var hash = new HashHandler();
+
+            var entidade = repositorio.ObterPorLogin(login);
+            if (entidade != null)
+            {
+                var sucessoLogin = hash.VerificarSenha(senha, entidade.Senha);
+                if (sucessoLogin)
+                {
+                    return new UsuarioDto(entidade);
+                }
+            }
+
+            return null;
+        }
+
+        public bool AlterarSenha(string login, string senhaAtual, string novaSenha)
+        {
+            var hash = new HashHandler();
+            var entidade = repositorio.ObterPorLogin(login);
+
+            var senhaAtualCorreta = hash.VerificarSenha(senhaAtual, entidade.Senha);
+
+            if (senhaAtualCorreta)
+            {
+                entidade.Senha = hash.CriptografarSenha(novaSenha);
+                repositorio.Alterar(entidade);
+
+                return true;
+            }
+
+            return false;            
+        }
+
     }
 }

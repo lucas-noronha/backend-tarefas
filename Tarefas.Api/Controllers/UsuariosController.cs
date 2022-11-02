@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
 using Tarefas.Domain.Dtos;
@@ -50,6 +51,7 @@ namespace Tarefas.Api.Controllers
             return Ok(lista);
         }
 
+        [AllowAnonymous]
         [HttpPost("cadastrar")]
         [SwaggerOperation(summary: "Cadastro de usuário", description: "Cadastra um usuário com base nas informações do dto")]
         [SwaggerResponse(200, "Usuário cadastrado com sucesso")]

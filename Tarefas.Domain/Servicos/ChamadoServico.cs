@@ -41,11 +41,13 @@ namespace Tarefas.Domain.Servicos
             return dtos;
         }
 
-        public void Cadastrar(ChamadoDto dto)
+        public Guid Cadastrar(ChamadoDto dto)
         {
             var entidade = dto.CriarOuAlterarEntidade();
 
             repositorio.Adicionar(entidade);
+
+            return entidade.Id;
         }
 
         public void CadastrarLista(ICollection<ChamadoDto> dtos)
@@ -62,9 +64,9 @@ namespace Tarefas.Domain.Servicos
             repositorio.Alterar(entidade);
         }
 
-        public void Cancelar(ChamadoDto dto)
+        public void Cancelar(Guid id)
         {
-            var entidade = repositorio.ObterPorId(dto.Id);
+            var entidade = repositorio.ObterPorId(id);
             entidade.Status = EStatusChamado.Cancelado;
 
             repositorio.Alterar(entidade);

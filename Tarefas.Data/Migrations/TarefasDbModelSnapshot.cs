@@ -104,6 +104,10 @@ namespace Tarefas.Data.Migrations
                         .HasColumnType("timestamp with time zone")
                         .HasColumnName("data_criacao");
 
+                    b.Property<bool>("Inativo")
+                        .HasColumnType("boolean")
+                        .HasColumnName("inativo");
+
                     b.Property<string>("Logradouro")
                         .IsRequired()
                         .HasColumnType("text")
@@ -205,6 +209,10 @@ namespace Tarefas.Data.Migrations
                         .HasColumnType("timestamp with time zone")
                         .HasColumnName("data_criacao");
 
+                    b.Property<bool>("Inativo")
+                        .HasColumnType("boolean")
+                        .HasColumnName("inativo");
+
                     b.Property<string>("Login")
                         .IsRequired()
                         .HasColumnType("text")
@@ -244,7 +252,7 @@ namespace Tarefas.Data.Migrations
                         .IsRequired();
 
                     b.HasOne("Tarefas.Domain.Entities.Usuario", "Responsavel")
-                        .WithMany()
+                        .WithMany("Tarefas")
                         .HasForeignKey("ResponsavelId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -291,6 +299,11 @@ namespace Tarefas.Data.Migrations
                     b.Navigation("Historico");
 
                     b.Navigation("TempoGasto");
+                });
+
+            modelBuilder.Entity("Tarefas.Domain.Entities.Usuario", b =>
+                {
+                    b.Navigation("Tarefas");
                 });
 #pragma warning restore 612, 618
         }
