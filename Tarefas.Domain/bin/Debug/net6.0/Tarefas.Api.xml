@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Tarefas.Domain</name>
+    </assembly>
+    <members>
+        <member name="P:Tarefas.Domain.Dtos.UsuarioDto.Id">
+            <summary>
+            Get Operation
+            </summary>
+        </member>
+    </members>
+</doc>

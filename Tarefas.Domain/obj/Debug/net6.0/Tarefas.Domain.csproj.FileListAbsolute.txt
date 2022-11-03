@@ -10,3 +10,4 @@ C:\Users\lucas\Repositories\backend-tarefas\Tarefas.Domain\obj\Debug\net6.0\Tare
 C:\Users\lucas\Repositories\backend-tarefas\Tarefas.Domain\obj\Debug\net6.0\refint\Tarefas.Domain.dll
 C:\Users\lucas\Repositories\backend-tarefas\Tarefas.Domain\obj\Debug\net6.0\Tarefas.Domain.pdb
 C:\Users\lucas\Repositories\backend-tarefas\Tarefas.Domain\obj\Debug\net6.0\ref\Tarefas.Domain.dll
+C:\Users\lucas\Repositories\backend-tarefas\Tarefas.Domain\bin\Debug\net6.0\TarefasDocumentacao.xml

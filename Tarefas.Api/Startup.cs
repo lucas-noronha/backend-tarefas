@@ -1,13 +1,18 @@
 ﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.PlatformAbstractions;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System.Diagnostics.Metrics;
+using System.Linq;
+using System.Reflection;
 using System.Reflection.Metadata;
 using System.Runtime;
 using System.Text;
 using Tarefas.Data;
 using Tarefas.Data.Repositorios;
+using Tarefas.Domain.Dtos;
 using Tarefas.Domain.Interfaces.Repositorios;
 using Tarefas.Domain.Servicos;
 using static System.Net.Mime.MediaTypeNames;
@@ -24,6 +29,16 @@ namespace Tarefas.Api
         {
             configRoot = configuration;
         }
+        static string XmlCommentsFilePath
+        {
+            get
+            {
+                var basePath = "";
+                var fileName = typeof(UsuarioDto).GetTypeInfo().Assembly.GetName().Name + ".xml";
+                return Path.Combine(basePath, fileName);
+            }
+        }
+
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
@@ -36,9 +51,15 @@ namespace Tarefas.Api
             });
             AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
 
+            var contentRoot = configRoot.GetValue<string>(WebHostDefaults.ContentRootKey);
+            var strings = contentRoot.Split(@"\");
+            var stringsPathBase = strings.Take(strings.Count() - 2);
+            var path = string.Join(@"\", stringsPathBase);
+            path = path + @"\TarefasDocumentacao.xml";
 
             services.AddSwaggerGen(c =>
             {
+                c.IncludeXmlComments(path);
                 c.EnableAnnotations();
                 c.SwaggerDoc("v1", new OpenApiInfo { 
                     Title = "Tarefas", Version = "v1", 

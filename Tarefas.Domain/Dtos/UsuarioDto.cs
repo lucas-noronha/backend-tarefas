@@ -7,6 +7,9 @@ namespace Tarefas.Domain.Dtos
 {
     public class UsuarioDto
     {
+        /// <summary>
+        /// DTO para cadastro de usuarios
+        /// </summary>
         public UsuarioDto()
         { }
         internal UsuarioDto(Usuario usuario)
@@ -19,6 +22,9 @@ namespace Tarefas.Domain.Dtos
 
             Tarefas = usuario.Tarefas?.Select(x => new ChamadoDto(x)).ToList();
         }
+        /// <summary>
+        /// Id do usuario
+        /// </summary>
         public Guid? Id { get; set; }
         public string? Nome { get; set; }
         public DateTime? DataCriacao { get; set; }

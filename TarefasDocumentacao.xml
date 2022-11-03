@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Tarefas.Domain</name>
+    </assembly>
+    <members>
+        <member name="M:Tarefas.Domain.Dtos.UsuarioDto.#ctor">
+            <summary>
+            DTO para cadastro de usuarios
+            </summary>
+        </member>
+        <member name="P:Tarefas.Domain.Dtos.UsuarioDto.Id">
+            <summary>
+            Id do usuario
+            </summary>
+        </member>
+    </members>
+</doc>
