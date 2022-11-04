@@ -32,7 +32,10 @@ namespace Tarefas.Domain.Dtos
         public string? Senha { get; set; }
         public ETipoUsuario TipoUsuario { get; set; }
 
-        [JsonIgnore]
+
+        /// <summary>
+        /// Uma lista que representa todas as tarefas em responsabilidade do usuário, apenas para retorno da API, não deve ser preenchido em requisições.
+        /// </summary>
         public List<ChamadoDto>? Tarefas { get; set; }
 
         internal Usuario CriarOuAlterarEntidade(Usuario? usuario = null)
