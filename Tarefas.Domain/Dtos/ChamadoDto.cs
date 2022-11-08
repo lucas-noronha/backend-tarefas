@@ -4,7 +4,7 @@ using System.Linq;
 using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
-using Tarefas.Domain.Entities;
+using Tarefas.Domain.Entidades;
 using Tarefas.Domain.Enums;
 
 namespace Tarefas.Domain.Dtos
@@ -48,14 +48,14 @@ namespace Tarefas.Domain.Dtos
         public DateTime DataCriacao { get; set; }
         public ETipoChamado TipoChamado { get; set; }
         public Guid CriadorId { get; set; }
-        public UsuarioDto Criador { get; set; }
+        public UsuarioDto? Criador { get; set; }
         public Guid ResponsavelId { get; set; }
-        public UsuarioDto Responsavel { get; set; }
+        public UsuarioDto? Responsavel { get; set; }
         public Guid ClienteId { get; set; }
-        public ClienteDto Cliente { get; set; }
+        public ClienteDto? Cliente { get; set; }
         public EStatusChamado Status { get; set; }
-        public List<TempoGastoDto> TempoGasto { get; set; }
-        public List<HistoricoChamadoDto> Historico { get; set; }
+        public List<TempoGastoDto>? TempoGasto { get; set; }
+        public List<HistoricoChamadoDto>? Historico { get; set; }
 
         internal Chamado CriarOuAlterarEntidade(Chamado? chamado = null)
         {

@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Tarefas.Domain.Dtos;
 
-namespace Tarefas.Domain.Entities
+namespace Tarefas.Domain.Entidades
 {
     public class HistoricoChamado
     {

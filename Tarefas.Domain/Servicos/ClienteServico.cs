@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AutoMapper;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,16 +12,19 @@ namespace Tarefas.Domain.Servicos
     public class ClienteServico
     {
         private readonly IClienteRepositorio repositorio;
-        public ClienteServico(IClienteRepositorio repositorio)
+        private readonly IMapper mapper;
+
+        public ClienteServico(IClienteRepositorio repositorio, IMapper mapper)
         {
             this.repositorio = repositorio;
+            this.mapper = mapper;
         }
 
 
         public ClienteDto ObterCliente(Guid id)
         {
             var entidade = repositorio.ObterPorId(id);
-            var dto = new ClienteDto(entidade);
+            var dto = mapper.Map<ClienteDto>(entidade);
 
             return dto;
         }
@@ -28,7 +32,7 @@ namespace Tarefas.Domain.Servicos
         public List<ClienteDto> ObterClientes()
         {
             var entidades = repositorio.ObterLista().Where(x => !x.Inativo).ToList();
-            var dtos = entidades.Select(x => new ClienteDto(x)).ToList();
+            var dtos = entidades.Select(x => mapper.Map<ClienteDto>(x)).ToList();
 
             return dtos;
         }

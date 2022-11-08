@@ -1,4 +1,4 @@
-﻿using Tarefas.Domain.Entities;
+﻿using Tarefas.Domain.Entidades;
 
 namespace Tarefas.Domain.Dtos
 {
@@ -21,7 +21,7 @@ namespace Tarefas.Domain.Dtos
         public string Atividade { get; set; }
         public DateTime DataAtividade { get; set; }
         public Guid ChamadoId { get; set; }
-        public ChamadoDto Chamado { get; set; }
+        public ChamadoDto? Chamado { get; set; }
 
         internal TempoGasto CriarOuAlterarEntidade(TempoGasto? tempoGasto = null)
         {

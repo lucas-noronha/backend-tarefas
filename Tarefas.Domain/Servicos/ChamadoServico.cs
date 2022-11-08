@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AutoMapper;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,31 +13,35 @@ namespace Tarefas.Domain.Servicos
     public class ChamadoServico
     {
         private readonly IChamadoRepositorio repositorio;
-        public ChamadoServico(IChamadoRepositorio repositorio)
+        private readonly IMapper mapper;
+
+        public ChamadoServico(IChamadoRepositorio repositorio, IMapper mapper)
         {
             this.repositorio = repositorio;
+            this.mapper = mapper;
         }
 
 
         public ChamadoDto ObterChamado(Guid id)
         {
             var entidade = repositorio.ObterPorId(id);
-            var dto = new ChamadoDto(entidade);
+            var dto = mapper.Map<ChamadoDto>(entidade);
 
             return dto;
         }
 
         public List<ChamadoDto> ObterChamadosEmAndamento()
         {
-            var entidades = repositorio.ObterLista().Where(x => x.Status != EStatusChamado.Finalizado && x.Status != EStatusChamado.Cancelado).ToList();
-            var dtos = entidades.Select(x => new ChamadoDto(x)).ToList();
+            
+            var entidades = repositorio.ListaComVinculos().Where(x => x.Status != EStatusChamado.Finalizado && x.Status != EStatusChamado.Cancelado).ToList();
+            var dtos = entidades.Select(x => mapper.Map<ChamadoDto>(x)).ToList();
 
             return dtos;
         }
         public List<ChamadoDto> ObterChamadosFinalizados()
         {
-            var entidades = repositorio.ObterLista().Where(x => x.Status == EStatusChamado.Finalizado || x.Status == EStatusChamado.Cancelado).ToList();
-            var dtos = entidades.Select(x => new ChamadoDto(x)).ToList();
+            var entidades = repositorio.ListaComVinculos().Where(x => x.Status == EStatusChamado.Finalizado || x.Status == EStatusChamado.Cancelado).ToList();
+            var dtos = entidades.Select(x => mapper.Map<ChamadoDto>(x)).ToList();
 
             return dtos;
         }
@@ -44,7 +49,6 @@ namespace Tarefas.Domain.Servicos
         public Guid Cadastrar(ChamadoDto dto)
         {
             var entidade = dto.CriarOuAlterarEntidade();
-
             repositorio.Adicionar(entidade);
 
             return entidade.Id;
@@ -68,7 +72,6 @@ namespace Tarefas.Domain.Servicos
         {
             var entidade = repositorio.ObterPorId(id);
             entidade.Status = EStatusChamado.Cancelado;
-
             repositorio.Alterar(entidade);
         }
 

@@ -1,4 +1,4 @@
-﻿using Tarefas.Domain.Entities;
+﻿using Tarefas.Domain.Entidades;
 using Tarefas.Domain.Interfaces;
 
 namespace Tarefas.Domain.Dtos

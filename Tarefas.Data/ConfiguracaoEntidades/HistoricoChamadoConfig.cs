@@ -5,11 +5,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Tarefas.Domain.Entities;
+using Tarefas.Domain.Entidades;
 
-namespace Tarefas.Data.EntitiesMapping
+namespace Tarefas.Data.ConfiguracaoEntidades
 {
-    public class HistoricoChamadoMapper : IEntityTypeConfiguration<HistoricoChamado>
+    public class HistoricoChamadoConfig : IEntityTypeConfiguration<HistoricoChamado>
     {
         public void Configure(EntityTypeBuilder<HistoricoChamado> builder)
         {

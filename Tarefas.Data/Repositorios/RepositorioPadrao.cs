@@ -4,7 +4,7 @@ using System.Data.Common;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Tarefas.Domain.Entities;
+using Tarefas.Domain.Entidades;
 using Tarefas.Domain.Interfaces.Repositorios;
 
 namespace Tarefas.Data.Repositorios

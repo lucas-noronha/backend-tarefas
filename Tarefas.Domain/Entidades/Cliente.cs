@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Tarefas.Domain.Dtos;
 using Tarefas.Domain.Interfaces;
 
-namespace Tarefas.Domain.Entities
+namespace Tarefas.Domain.Entidades
 {
     public class Cliente : Pessoa, IEndereco
     {

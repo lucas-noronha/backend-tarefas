@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.PlatformAbstractions;
@@ -10,9 +11,12 @@ using System.Reflection;
 using System.Reflection.Metadata;
 using System.Runtime;
 using System.Text;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 using Tarefas.Data;
 using Tarefas.Data.Repositorios;
 using Tarefas.Domain.Dtos;
+using Tarefas.Domain.Entidades;
 using Tarefas.Domain.Interfaces.Repositorios;
 using Tarefas.Domain.Servicos;
 using static System.Net.Mime.MediaTypeNames;
@@ -39,10 +43,17 @@ namespace Tarefas.Api
             }
         }
 
+
+
+
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
-
+            
+            services.AddControllers()
+                .AddJsonOptions(opt =>
+                {
+                    opt.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
+                });
 
             var conStr = configRoot.GetConnectionString("Tarefas");
             services.AddDbContext<TarefasDb>(options =>
@@ -51,6 +62,8 @@ namespace Tarefas.Api
             });
             AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
 
+
+            #region SwaggerConfigucao
             var contentRoot = configRoot.GetValue<string>(WebHostDefaults.ContentRootKey);
             var strings = contentRoot.Split(@"\");
             var stringsPathBase = strings.Take(strings.Count() - 2);
@@ -98,16 +111,9 @@ namespace Tarefas.Api
                     }
                 });
             });
+            #endregion
 
-            
-            services.AddTransient<IChamadoRepositorio, ChamadoRepositorio>();
-            services.AddTransient<IClienteRepositorio, ClienteRepositorio>();
-            services.AddTransient<IUsuarioRepositorio, UsuarioRepositorio>();
-            services.AddTransient<ChamadoServico>();
-            services.AddTransient<ClienteServico>();
-            services.AddTransient<UsuarioServico>();
-
-
+            #region ImplementacaoJwt
             var configChave = configRoot["Jwt:Key"];
             var issuer = configRoot["Jwt:Issuer"];
             var audience = configRoot["Jwt:Audience"];
@@ -134,6 +140,32 @@ namespace Tarefas.Api
 
                  };
              });
+            #endregion
+
+            #region AutoMapper
+            var config = new MapperConfiguration(cfg =>
+            {
+                cfg.CreateMap<Usuario, UsuarioDto>()
+                .ForMember(x => x.Senha, y => y.Ignore());
+                cfg.CreateMap<Cliente, ClienteDto>();
+                cfg.CreateMap<HistoricoChamado, HistoricoChamadoDto>();
+                cfg.CreateMap<TempoGasto, TempoGastoDto>();
+                cfg.CreateMap<Chamado, ChamadoDto>();
+            });
+            IMapper mapper = config.CreateMapper();
+            #endregion
+
+            #region InjecaoDependencias
+            services.AddTransient<IChamadoRepositorio, ChamadoRepositorio>();
+            services.AddTransient<IClienteRepositorio, ClienteRepositorio>();
+            services.AddTransient<IUsuarioRepositorio, UsuarioRepositorio>();
+            services.AddTransient<ChamadoServico>();
+            services.AddTransient<ClienteServico>();
+            services.AddTransient<UsuarioServico>();
+            services.AddSingleton(mapper);
+            #endregion
+
+
         }
         public void Configure(WebApplication app, IWebHostEnvironment env)
         {
@@ -143,9 +175,6 @@ namespace Tarefas.Api
             {
                 options.SwaggerEndpoint("/swagger/v1/swagger.json", "v1");
             });
-
-
-            
 
             app.UseStaticFiles();
             app.UseRouting();

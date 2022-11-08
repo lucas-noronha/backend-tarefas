@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AutoMapper;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,15 +13,18 @@ namespace Tarefas.Domain.Servicos
     public class UsuarioServico
     {
         private readonly IUsuarioRepositorio repositorio;
-        public UsuarioServico(IUsuarioRepositorio usuarioRepositorio)
+        private readonly IMapper mapper;
+
+        public UsuarioServico(IUsuarioRepositorio usuarioRepositorio, IMapper mapper)
         {
             repositorio = usuarioRepositorio;
+            this.mapper = mapper;
         }
 
         public UsuarioDto ObterUsuario(Guid id)
         {
             var entidade = repositorio.ObterPorId(id);
-            var dto = new UsuarioDto(entidade);
+            var dto = mapper.Map<UsuarioDto>(entidade);
 
             return dto;            
         }
@@ -28,7 +32,7 @@ namespace Tarefas.Domain.Servicos
         public List<UsuarioDto> ObterUsuarios()
         {
             var entidades = repositorio.ObterLista().Where(x => !x.Inativo).ToList();
-            var dtos = entidades.Select(x => new UsuarioDto(x)).ToList();
+            var dtos = entidades.Select(x => mapper.Map<UsuarioDto>(x)).ToList();
 
             return dtos;
         }
@@ -72,7 +76,7 @@ namespace Tarefas.Domain.Servicos
                 var sucessoLogin = hash.VerificarSenha(senha, entidade.Senha);
                 if (sucessoLogin)
                 {
-                    return new UsuarioDto(entidade);
+                    return mapper.Map<UsuarioDto>(entidade);
                 }
             }
 

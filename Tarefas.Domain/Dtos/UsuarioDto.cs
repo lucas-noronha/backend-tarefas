@@ -1,5 +1,5 @@
 ﻿using System.Text.Json.Serialization;
-using Tarefas.Domain.Entities;
+using Tarefas.Domain.Entidades;
 using Tarefas.Domain.Enums;
 using Tarefas.Domain.Handlers;
 

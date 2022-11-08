@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "aT+YX5VdDRskZn+TZSt22GVkP12U4AKSk/zSRdkbZP6Rq710r7JOxf/uSYsdOm6h03lFSBnChGar35C1GYvBtA==",
+  "dgSpecHash": "/MdbqPLVUhj/eKx4hwdt9N1ce3r4S7m0RxlT+JLLOew8wgJyU/9cOAc4WiSgQ0YVAS3FjdgjuWFkXQf4tsYoEw==",
   "success": true,
   "projectFilePath": "C:\\Users\\lucas\\Repositories\\backend-tarefas\\Tarefas.Domain\\Tarefas.Domain.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\lucas\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
+    "C:\\Users\\lucas\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512"
+  ],
   "logs": []
 }

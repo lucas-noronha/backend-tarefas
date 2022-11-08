@@ -9,5 +9,15 @@
             DTO para cadastro de usuarios
             </summary>
         </member>
+        <member name="P:Tarefas.Domain.Dtos.UsuarioDto.Id">
+            <summary>
+            Id do usuario
+            </summary>
+        </member>
+        <member name="P:Tarefas.Domain.Dtos.UsuarioDto.Tarefas">
+            <summary>
+            Uma lista que representa todas as tarefas em responsabilidade do usuário, apenas para retorno da API, não deve ser preenchido em requisições.
+            </summary>
+        </member>
     </members>
 </doc>

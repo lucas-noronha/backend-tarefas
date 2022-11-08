@@ -1,13 +1,8 @@
 <?xml version="1.0"?>
 <doc>
     <assembly>
-        <name>Tarefas.Domain</name>
+        <name>Tarefas.Api</name>
     </assembly>
     <members>
-        <member name="M:Tarefas.Domain.Dtos.UsuarioDto.#ctor">
-            <summary>
-            DTO para cadastro de usuarios
-            </summary>
-        </member>
     </members>
 </doc>

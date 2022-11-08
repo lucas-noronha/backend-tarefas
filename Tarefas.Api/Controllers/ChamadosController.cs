@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.FileProviders;
 using Swashbuckle.AspNetCore.Annotations;
-using Tarefas.Data.EntitiesMapping;
+using Tarefas.Data.ConfiguracaoEntidades;
 using Tarefas.Domain.Dtos;
 using Tarefas.Domain.Servicos;
 

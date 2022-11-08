@@ -1,4 +1,4 @@
-﻿using Tarefas.Domain.Entities;
+﻿using Tarefas.Domain.Entidades;
 
 namespace Tarefas.Domain.Dtos
 {
@@ -24,12 +24,12 @@ namespace Tarefas.Domain.Dtos
 
         public Guid UsuarioId { get; set; }
 
-        public UsuarioDto Usuario { get; set; }
+        public UsuarioDto? Usuario { get; set; }
 
         public DateTime DataOcorrencia { get; set; }
 
         public Guid ChamadoId { get; set; }
-        public ChamadoDto Chamado { get; set; }
+        public ChamadoDto? Chamado { get; set; }
 
         internal HistoricoChamado CriarOuAlterarEntidade(HistoricoChamado? historico = null)
         {

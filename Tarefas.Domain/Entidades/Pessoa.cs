@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Tarefas.Domain.Entities
+namespace Tarefas.Domain.Entidades
 {
     public abstract class Pessoa
     {

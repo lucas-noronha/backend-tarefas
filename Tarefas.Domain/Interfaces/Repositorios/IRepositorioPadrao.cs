@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Tarefas.Domain.Entities;
+using Tarefas.Domain.Entidades;
 
 namespace Tarefas.Domain.Interfaces.Repositorios
 {

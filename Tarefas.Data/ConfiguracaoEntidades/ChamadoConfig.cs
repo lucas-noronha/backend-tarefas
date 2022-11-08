@@ -5,11 +5,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Tarefas.Domain.Entities;
+using Tarefas.Domain.Entidades;
 
-namespace Tarefas.Data.EntitiesMapping
+namespace Tarefas.Data.ConfiguracaoEntidades
 {
-    public class ChamadoMapper : IEntityTypeConfiguration<Chamado>
+    public class ChamadoConfig : IEntityTypeConfiguration<Chamado>
     {
         public void Configure(EntityTypeBuilder<Chamado> builder)
         {

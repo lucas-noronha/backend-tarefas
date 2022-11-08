@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.Reflection;
 using System.Runtime.InteropServices;
-using Tarefas.Domain.Entities;
+using Tarefas.Domain.Entidades;
 
 namespace Tarefas.Data
 {
