@@ -68,11 +68,11 @@ namespace Tarefas.Api
             var strings = contentRoot.Split(@"\");
             var stringsPathBase = strings.Take(strings.Count() - 2);
             var path = string.Join(@"\", stringsPathBase);
-            path = path + @"\TarefasDocumentacao.xml";
+            path = @"/app/TarefasDocumentacao.xml";
 
             services.AddSwaggerGen(c =>
             {
-                c.IncludeXmlComments(path);
+                //c.IncludeXmlComments(path);
                 c.EnableAnnotations();
                 c.SwaggerDoc("v1", new OpenApiInfo { 
                     Title = "Tarefas", Version = "v1", 
