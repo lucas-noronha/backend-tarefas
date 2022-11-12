@@ -48,7 +48,15 @@ namespace Tarefas.Api
 
         public void ConfigureServices(IServiceCollection services)
         {
-            
+            services.AddCors(options =>
+            {
+                options.AddPolicy("CorsPolicy", builder => builder
+                    .AllowAnyOrigin()
+                    .AllowAnyMethod()
+                    .AllowAnyHeader());
+
+            });
+
             services.AddControllers()
                 .AddJsonOptions(opt =>
                 {
@@ -178,6 +186,8 @@ namespace Tarefas.Api
 
             app.UseStaticFiles();
             app.UseRouting();
+
+            app.UseCors("CorsPolicy");
             app.UseAuthentication();
             app.UseAuthorization();
             app.UseEndpoints(x => x.MapControllers().RequireAuthorization());
